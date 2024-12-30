@@ -1,0 +1,29 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+.vscode
+*.pem
+cdk.out
+cdk.context.json
+
+__pycache__/
+*$py.class
+
+notebook/
+
+/**/python/*
+!/**/python/.gitkeep
+
+/**/typescript/*
+!/**/typescript/.gitkeep
+
+.env
+.env.dev
