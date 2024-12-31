@@ -48,6 +48,7 @@ def handler(event, context):
                         else:
                             attd_cnt[user_name] = 1
 
+    # 誰も1回も出勤しなかった場合
     if len(attd_cnt) == 0:
         return {"statusCode": 200, "body": json.dumps("No attendance.")}
 
