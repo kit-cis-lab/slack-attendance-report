@@ -38,7 +38,7 @@ def handler(event, context):
             reactions = post["reactions"]
             for reaction in reactions:
                 # リアクションが出勤の場合
-                if reaction["name"] in "出勤_shukkin":
+                if reaction["name"] == "出勤_syukkin":
                     # リアクションをつけたユーザーをループする
                     for user_id in reaction["users"]:
                         # ユーザーの出勤回数をカウントアップする
@@ -47,6 +47,9 @@ def handler(event, context):
                             attd_cnt[user_name] += 1
                         else:
                             attd_cnt[user_name] = 1
+
+    if len(attd_cnt) == 0:
+        return {"statusCode": 200, "body": json.dumps("No attendance.")}
 
     # 出勤数ランキングのテキストを作成する
     ranking_text = create_ranking_text(attd_cnt)
