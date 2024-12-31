@@ -14,10 +14,10 @@ from dotenv import load_dotenv
 
 
 class SlackAttendanceReport(Stack):
-    load_dotenv()
-
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
+
+        load_dotenv()
 
         # Secrets Managerを作成
         secret_manager = secretsmanager.Secret(
